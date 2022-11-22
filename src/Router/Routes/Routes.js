@@ -1,5 +1,7 @@
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home/Home";
+import Login from "../../pages/LogIn/LogIn";
+import SignUp from "../../pages/SignUp/SignUp";
 import CourseDetails from "../../pages/Subjects/CourseDetails/CourseDetails";
 import Courses from "../../pages/Subjects/Courses/Courses";
 
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
             },
             {
                 path: '/course/:id',
