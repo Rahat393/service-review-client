@@ -18,7 +18,7 @@ const Header = () => {
 
         {user?.uid ?
             <>
-                {/* <li><Link to='/dashboard'>Dashboard</Link></li> */}
+                <li><Link to='/myreview'>My Reviews</Link></li>
                 <li><button onClick={handleLogOut}>Sign Out </button></li>
             </>
             :
@@ -37,7 +37,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Physics Zone</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
