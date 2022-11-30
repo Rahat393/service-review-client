@@ -21,7 +21,9 @@ const CourseDetails = () => {
             </div>
             <div className='ml-32 my-12'>
                 <h2 className="text-3xl">Review Section</h2>
-                <ReviewSection ></ReviewSection>
+                <ReviewSection
+                    title={title}
+                ></ReviewSection>
             </div>
         </div>
     );
