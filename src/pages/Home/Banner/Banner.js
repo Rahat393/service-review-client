@@ -2,12 +2,12 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="hero w-2/3 my-10	 mx-auto ">
-            <div className="hero-content flex-col lg:flex-row">
-                <img src="https://www.aakash.ac.in/blog/wp-content/uploads/2022/04/Blog-Image-30.jpg" alt='' className="max-w-sm rounded-lg shadow-2xl" />
-                <div>
-                    <h1 className="text-5xl font-bold">Welcome to my physics course!!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://physicsworld.com/wp-content/uploads/2022/10/QW_Safranova-image.jpg")` }}>
+            <div className="hero-overlay bg-opacity-50"></div>
+            <div className="hero-content text-center text-neutral-content">
+                <div className="max-w-md">
+                    <h1 className="mb-5 text-5xl font-bold">Welcome To The Physics Zone  !!</h1>
+                    <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 
                 </div>
             </div>

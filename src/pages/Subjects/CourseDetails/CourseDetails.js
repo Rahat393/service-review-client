@@ -1,9 +1,11 @@
 import React from 'react';
 
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../hooks/hooks';
 import ReviewSection from '../../ReviewSection/ReviewSection';
 
 const CourseDetails = () => {
+    useTitle('Review Section')
     const { title, img, description, price } = useLoaderData()
     return (
         <div className='flex'>

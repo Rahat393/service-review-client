@@ -3,9 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import toast from 'react-hot-toast';
 import Loading from '../Loading/Loading';
+import useTitle from '../../hooks/hooks';
 
 const MyReviews = () => {
-
+    useTitle('My Reviews')
     const { user } = useContext(AuthContext)
     const url = `http://localhost:5000/reviews?email=${user?.email}`
 

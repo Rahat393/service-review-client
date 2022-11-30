@@ -3,12 +3,15 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import useTitle from '../../hooks/hooks';
+import Loading from '../Loading/Loading';
 
 
 
 const Login = () => {
+    useTitle('Login')
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { signIn, providerLogin } = useContext(AuthContext)
+    const { signIn, providerLogin, loading } = useContext(AuthContext)
     const [loginError, setLoginError] = useState('');
     const [loginUserEmail, setLoginUserEmail] = useState('');
 
@@ -46,6 +49,9 @@ const Login = () => {
                 console.log(error.message)
                 setLoginError(error.message);
             });
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (

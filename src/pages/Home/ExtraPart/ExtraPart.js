@@ -2,23 +2,19 @@ import React from 'react';
 
 const ExtraPart = () => {
     return (
-        <div className='w-3/5 mx-auto'>
-            <h2 className='text-4xl text-center'>More About My Course</h2>
-            <div className="card ax-w-xl bg-base-100 shadow-xl  ">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">
-                        Shoes!
-                        <div className="badge badge-secondary">NEW</div>
-                    </h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
-                    </div>
+        <div className="hero w-2/3 my-10	 mx-auto ">
+            <div className="hero-content flex-col lg:flex-row">
+                <img src="https://www.aakash.ac.in/blog/wp-content/uploads/2022/04/Blog-Image-30.jpg" alt='' className="max-w-sm rounded-lg shadow-2xl" />
+                <div>
+                    <h1 className="text-5xl font-bold">Explore The Physics Zone</h1>
+                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+
                 </div>
             </div>
         </div>
+
+
+
     );
 };
 
