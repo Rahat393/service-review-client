@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import toast from 'react-hot-toast';
+import Loading from '../Loading/Loading';
 
 const MyReviews = () => {
+
     const { user } = useContext(AuthContext)
     const url = `http://localhost:5000/reviews?email=${user?.email}`
 
@@ -16,10 +18,8 @@ const MyReviews = () => {
                     // authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
             });
+
             const data = await res.json();
-            // if (isLoading) {
-            //     return <progress className="progress w-56"></progress>
-            // }
             return data;
         }
     })
@@ -38,6 +38,9 @@ const MyReviews = () => {
                     toast.success(` Review deleted successfully`)
                 }
             })
+    }
+    if (isLoading) {
+        return <Loading></Loading>
     }
     return (
         <div>
