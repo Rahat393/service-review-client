@@ -1,14 +1,14 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
-const ReviewSection = ({ title }) => {
+const ReviewSection = ({ title, refetch }) => {
     const { user } = useContext(AuthContext)
     if (!user?.uid) {
         return <p className='my-5 text-xl'>Please <Link className='text-sky-400 text-3xl' to={'/login'}>LogIn</Link> to add review!!</p>
     }
-
     const handleReviews = event => {
         event.preventDefault();
         const form = event.target;
@@ -38,9 +38,10 @@ const ReviewSection = ({ title }) => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
+
                     toast.success('Review Added Successfully')
                     form.reset();
-
+                    refetch()
                 }
             })
             .catch(er => console.error(er));

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthProvider';
+import Loading from '../../Loading/Loading';
 
 const CourseCard = ({ course }) => {
     const { _id, title, img, price, description } = course;
+    const { loading } = useContext(AuthContext)
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <PhotoProvider>

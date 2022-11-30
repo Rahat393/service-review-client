@@ -7,10 +7,11 @@ import useTitle from '../../hooks/hooks';
 
 const MyReviews = () => {
     useTitle('My Reviews')
-    const { user } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext)
+
     const url = `http://localhost:5000/reviews?email=${user?.email}`
 
-    const { data: reviews = [], isLoading, refetch } = useQuery({
+    const { data: reviews = [], refetch } = useQuery({
         queryKey: ['reviews', user?.email],
 
         queryFn: async () => {
@@ -35,14 +36,16 @@ const MyReviews = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
+                    console.log(data);
                     refetch();
                     toast.success(` Review deleted successfully`)
                 }
             })
     }
-    if (isLoading) {
+    if (loading) {
         return <Loading></Loading>
     }
+
     return (
         <div>
             <h3 className="text-3xl mb-5">My Reviews</h3>
