@@ -4,7 +4,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 
 const AllReview = ({ title, refetch }) => {
     const { user } = useContext(AuthContext)
-    const url = `http://localhost:5000/reviewsss?title=${title}`
+    const url = `https://service-review-server-six-teal.vercel.app/reviewsss?title=${title}`
 
     const { data: reviews = [], } = useQuery({
         queryKey: ['reviews', title],

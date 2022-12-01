@@ -9,7 +9,7 @@ const MyReviews = () => {
     useTitle('My Reviews')
     const { user, loading } = useContext(AuthContext)
 
-    const url = `http://localhost:5000/reviews?email=${user?.email}`
+    const url = `https://service-review-server-six-teal.vercel.app/reviews?email=${user?.email}`
 
     const { data: reviews = [], refetch } = useQuery({
         queryKey: ['reviews', user?.email],
@@ -27,7 +27,7 @@ const MyReviews = () => {
     })
 
     const handleDeleteReview = reviews => {
-        fetch(`http://localhost:5000/reviews/${reviews._id}`, {
+        fetch(`https://service-review-server-six-teal.vercel.app/reviews/${reviews._id}`, {
             method: 'DELETE',
             headers: {
 

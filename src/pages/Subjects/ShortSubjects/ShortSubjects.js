@@ -6,7 +6,7 @@ const ShortSubjects = () => {
     const [shortSubjects, setShortSubjects] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/3subjects')
+        fetch('https://service-review-server-six-teal.vercel.app/3subjects')
             .then(res => res.json())
             .then(data => setShortSubjects(data))
 

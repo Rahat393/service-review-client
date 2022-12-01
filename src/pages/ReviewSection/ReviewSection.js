@@ -27,7 +27,7 @@ const ReviewSection = ({ title, refetch }) => {
         // }
         console.log(review);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://service-review-server-six-teal.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
