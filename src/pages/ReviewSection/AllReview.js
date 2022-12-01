@@ -1,7 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const AllReview = ({ title, refetch }) => {
+    const { user } = useContext(AuthContext)
     const url = `http://localhost:5000/reviewsss?title=${title}`
 
     const { data: reviews = [], } = useQuery({
@@ -23,10 +25,13 @@ const AllReview = ({ title, refetch }) => {
     })
     return (
         <div>
-            <h3 className="text-3xl mb-5">All Reviews of {title}</h3>
-            {
-                reviews.length < 1 ? <h2 className='text-3xl text-center my-28'>Please Add A Review On This Subject</h2>
-                    :
+
+
+            {reviews.length < 1 && <h2 className='text-3xl text-center my-28'>Please Add A Review On This Subject</h2>}
+
+            {user?.uid &&
+                <>
+                    {<h3 className="text-3xl mb-5">All Reviews of {title}</h3>}
                     <div className="overflow-x-auto">
                         <table className="table w-full">
                             <thead>
@@ -47,8 +52,9 @@ const AllReview = ({ title, refetch }) => {
                                 }
                             </tbody>
                         </table>
-                    </div>
+                    </div></>
             }
+
 
         </div>
     );
